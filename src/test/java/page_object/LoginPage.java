@@ -20,16 +20,16 @@ public class LoginPage extends NavigationBar {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-    public LoginPage waitForPageToLoad() throws Exception{
-        try {
-            ActOn.wait(driver, ZillowLogo).waitForElementToBeVisible();
-            //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
+//    public LoginPage waitForPageToLoad() throws Exception{
+//        try {
+//            ActOn.wait(driver, ZillowLogo).waitForElementToBeVisible();
+//            //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+//        }catch (Exception e)
+//        {
+//            System.out.println("Human verification Button Appears");
+//        }
+//        return this;
+//    }
     public LoginPage ClickSignIn() throws Exception{
         try {
 

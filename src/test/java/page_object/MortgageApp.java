@@ -22,18 +22,18 @@ public class MortgageApp extends NavigationBar{
         super(driver);
     }
 
-    public MortgageApp waitForPageToLoad() throws Exception{
-        try {
-            ActOn.wait(driver, FindAnAgentTitle).waitForElementToBeVisible();
-            //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-            return this;
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Exception");
-        }
-        return this;
-
-    }
+//    public MortgageApp waitForPageToLoad() throws Exception{
+//        try {
+//            ActOn.wait(driver, FindAnAgentTitle).waitForElementToBeVisible();
+//            //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//            return this;
+//        }catch (Exception e)
+//        {
+//            System.out.println("Human verification Button Exception");
+//        }
+//        return this;
+//
+//    }
     public MortgageApp MouseHoverToMortgageApp() throws Exception{
         try {
         ActOn.wait(driver, HomeLoansButton).waitForElementToBeVisible();

@@ -27,15 +27,15 @@ public class AgentFinder extends NavigationBar {
         super(driver);
     }
 
-    public AgentFinder waitForPageToLoad() throws Exception{
-        try {
-            ActOn.wait(driver, FindAnAgentTitle).waitForElementToBeVisible();
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
+//    public AgentFinder waitForPageToLoad() throws Exception{
+//        try {
+//            ActOn.wait(driver, FindAnAgentTitle).waitForElementToBeVisible();
+//        }catch (Exception e)
+//        {
+//            System.out.println("Human verification Button Appears");
+//        }
+//        return this;
+//    }
 
     public AgentFinder ClicksOnAgentFinderButton()throws Exception {
         try {
@@ -67,10 +67,10 @@ public class AgentFinder extends NavigationBar {
     }
 
 
-    public AgentFinder EntersZipcode(String value) throws Exception{
+    public AgentFinder EntersLocation(String arg0) throws Exception{
         try {
             ActOn.wait(driver, LocationSearchBar).waitForElementToBeVisible();
-            ActOn.element(driver, LocationSearchBar).setValue(value);
+            ActOn.element(driver, LocationSearchBar).setValue(arg0);
             LOGGER.debug("User Input value in Location Search Bar");
         }catch (Exception e)
         {

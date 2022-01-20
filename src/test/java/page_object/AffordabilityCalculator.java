@@ -28,15 +28,15 @@ public class AffordabilityCalculator extends NavigationBar{
         super(driver);
     }
 
-    public AffordabilityCalculator waitForPageToLoad() throws Exception{
-        try {
-            ActOn.wait(driver, FindAnAgentTitle).waitForElementToBeVisible();
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
+//    public AffordabilityCalculator waitForPageToLoad() throws Exception{
+//        try {
+//            ActOn.wait(driver, FindAnAgentTitle).waitForElementToBeVisible();
+//        }catch (Exception e)
+//        {
+//            System.out.println("Human verification Button Appears");
+//        }
+//        return this;
+//    }
     public AffordabilityCalculator MouseHoverToAffordabilityCalculatorButton() throws Exception{
         try {
             ActOn.wait(driver, HomeLoansButton).waitForElementToBeVisible();

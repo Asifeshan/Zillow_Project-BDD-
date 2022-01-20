@@ -63,10 +63,5 @@ public class NavigationBar {
         return new Home(driver);
 
     }
-//    public AffordabilityCalculator navigateToFullreport() {
-//        ActOn.browser(driver).openBrowser(ReadConfigFiles.getPropertyValues("ZillowAppUrl"));
-//        LOGGER.info("User Is in HomePage");
-//        return new AffordabilityCalculator(driver);
-//    }
 
 }

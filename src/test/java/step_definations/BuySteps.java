@@ -26,10 +26,21 @@ public class BuySteps {
 
     }
 
-    @Then("^User able to see the Luxury Homes$")
-    public void userAbleToSeeTheLuxuryHomes() throws Exception {
-        new Buy(driver).LuxuryHomes();
-        LOGGER.info("User able to see the Luxury Homes");
+    @When("User clicks on Search Button upon entering the area {string}")
+    public void userClicksOnSearchButtonUponEnteringTheArea(String Area) throws Exception {
+        new Home(driver)
+                .BuyOption()
+                .NavigatedToBuyPage()
+                .UserEntersArea(Area)
+                .AreaSearchButtonClick();
+        LOGGER.info("User Successfully enters the area and clicks on search button");
 
+
+    }
+
+    @Then("User can see all available homes to buy")
+    public void userCanSeeAllAvailableHomesToBuy() throws Exception {
+        new Buy(driver).LuxuryHomes();
+        LOGGER.info("User can See available homes for buy in desired Area");
     }
 }

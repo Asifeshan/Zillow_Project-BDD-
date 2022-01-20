@@ -12,6 +12,9 @@ public class Buy extends NavigationBar {
     private static final By SortByButton = By.xpath("//button[text()='Homes for You']");
     private static final By HighToLowButton = By.xpath("//button[text()='Price (High to Low)']");
     private static final By ZillowLogo = By.xpath("//*[@id='page-header-container']/header/nav/div[1]/a/img[1]");
+    private static final By AreaSearchBar = By.xpath("//form/div[1]/input[contains(@aria-owns,'react-autowhatever-1')]");
+    private static final By AreaSearchButton = By.cssSelector("#srp-search-box > form > div.searchBtnContainer.zillow-searchbox-content-container > button > svg");
+
     private static final Logger LOGGER = LogManager.getLogger(Buy.class);
 
 
@@ -19,15 +22,15 @@ public class Buy extends NavigationBar {
         super(driver);
     }
 
-    public Buy waitForPageToLoad() throws Exception{
-        try {
-            ActOn.wait(driver, ZillowLogo).waitForElementToBeVisible();
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
+//    public Buy waitForPageToLoad() throws Exception{
+//        try {
+//            ActOn.wait(driver, ZillowLogo).waitForElementToBeVisible();
+//        }catch (Exception e)
+//        {
+//            System.out.println("Human verification Button Appears");
+//        }
+//        return this;
+//    }
 
 
     public Buy NavigatedToBuyPage()throws Exception{
@@ -90,4 +93,29 @@ public class Buy extends NavigationBar {
         }
         return this;
     }
+    public Buy UserEntersArea(String Area)throws Exception{
+        try {
+            ActOn.wait(driver, AreaSearchBar).waitForElementToBeVisible();
+            ActOn.element(driver, AreaSearchBar).setValue(Area);
+            LOGGER.debug("User Enters Area");
+            //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+        }catch (Exception e)
+        {
+            System.out.println("Human verification Button Appears");
+        }
+        return this;
+    }
+    public Buy AreaSearchButtonClick()throws Exception{
+        try {
+            ActOn.wait(driver, AreaSearchButton).waitForElementToBeVisible();
+            ActOn.element(driver, AreaSearchButton).click();
+            // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+            LOGGER.debug("User Clicks On High to low Button");
+        }catch (Exception e)
+        {
+            System.out.println("Human verification Button Appears");
+        }
+        return this;
+    }
+
 }

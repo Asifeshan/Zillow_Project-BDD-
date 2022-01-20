@@ -18,16 +18,17 @@ public class ManageRental extends NavigationBar{
     public ManageRental(WebDriver driver) {
         super(driver);
     }
-    public ManageRental waitForPageToLoad() throws Exception{
-        try {
-            ActOn.wait(driver, ManageRentalPageTitle).waitForElementToBeVisible();
-            LOGGER.debug("User Enters Manage Rental Page");
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
+
+//    public ManageRental waitForPageToLoad() throws Exception{
+//        try {
+//            ActOn.wait(driver, ManageRentalPageTitle).waitForElementToBeVisible();
+//            LOGGER.debug("User Enters Manage Rental Page");
+//        }catch (Exception e)
+//        {
+//            System.out.println("Human verification Button Appears");
+//        }
+//        return this;
+//    }
     public ManageRental ClicksOnManageRentalButton() throws Exception{
         try {
             ActOn.wait(driver, ManageRentalButton).waitForElementToBeVisible();

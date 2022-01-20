@@ -1,6 +1,7 @@
 package step_definations;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -31,11 +32,15 @@ public class LoginSteps {
         LOGGER.info("User is on homepage");
 
     }
+    @And("User Clicks on SignIn Link")
+    public void userClicksOnSignInLink() throws Exception {
+        new LoginPage(driver).ClickSignIn();
+        LOGGER.info("User Clicks on SignIn Link");
+    }
 
     @When("^After Clicking SignIN User enters email \"(.+?)\" and password \"(.+?)\" and Clicks On LogIn Button$")
     public void userEntersEmailAndPassword(String email, String password) throws Exception {
         new LoginPage(driver)
-                .ClickSignIn()
                 .UserEntersEmail()
                 .UserEntersPassword()
                 .ClickLoginButton();
@@ -56,7 +61,6 @@ public class LoginSteps {
         List<Map<String, String>> data = table.asMaps(String.class, String.class);
         for (Map<String, String> cells : data) {
             new LoginPage(driver)
-                    .ClickSignIn()
                     .TypeEmail(cells.get("email"))
                     .TypePassword(cells.get("password"))
                     .ClickLoginButton();
@@ -68,7 +72,6 @@ public class LoginSteps {
     @When("^user click on signIn upon entering validEmail \"(.+?)\" and invalidPassword \"(.+?)\"$")
     public void clicksOnSignInButton(String validEmail, String invalidPassword) throws Exception {
         new LoginPage(driver)
-                .ClickSignIn()
                 .typeValidEmail()
                 .typeInValidPassword()
                 .ClickLoginButton();
@@ -78,8 +81,10 @@ public class LoginSteps {
 
     @Then("^user is failed to login$")
     public void userIsFailedToLogin() throws Exception {
-        new LoginPage(driver).userStillOnSignInPage();
+        new LoginPage(driver)
+                .userStillOnSignInPage();
         LOGGER.info("User failed to logIn");
 
     }
+
 }
