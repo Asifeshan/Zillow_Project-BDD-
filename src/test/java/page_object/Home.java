@@ -16,6 +16,7 @@ import java.time.Duration;
 public class Home extends NavigationBar {
     private static final By BuyButton = By.xpath("//a/span[text()='Buy']");
     private static final By ZillowLogo = By.xpath("//a/img[1][contains(@class, 'pfs__j60ma-1 eCEnCc')]");
+    private static final By HomeLoansButton = By.xpath("//a/span[text()='Home Loans']");
   //  private static final By robot = By.xpath("/html/body");
 
 

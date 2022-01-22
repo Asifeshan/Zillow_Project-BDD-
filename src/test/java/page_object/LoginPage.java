@@ -8,8 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends NavigationBar {
-    private static final By ZillowLogo = By.xpath("//a/img[1][contains(@class, 'pfs__j60ma-1 eCEnCc')]");
-    private static final By SignIn = By.xpath("//*[@id='page-header-container']/header/nav/div[2]/ul[4]/li[1]/a/span");
+//    private static final By ZillowLogo = By.xpath("//a/img[1][contains(@class, 'pfs__j60ma-1 eCEnCc')]");
+//    private static final By SignIn = By.xpath("//*[@id='page-header-container']/header/nav/div[2]/ul[4]/li[1]/a/span");
     private static final By Email = By.id("reg-login-email");
     private static final By Password = By.id("inputs-password");
     private static final By SignInButton = By.xpath("//input[contains(@class, 'StyledButton')]");
@@ -30,19 +30,19 @@ public class LoginPage extends NavigationBar {
 //        }
 //        return this;
 //    }
-    public LoginPage ClickSignIn() throws Exception{
-        try {
-
-            ActOn.wait(driver, SignIn).waitForElementToBeVisible();
-            ActOn.element(driver, SignIn).click();
-            LOGGER.debug("User Clicks In Sign IN Button");
-            //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
+//    public LoginPage ClickSignIn() throws Exception{
+//        try {
+//
+//            ActOn.wait(driver, SignIn).waitForElementToBeVisible();
+//            ActOn.element(driver, SignIn).click();
+//            LOGGER.debug("User Clicks In Sign IN Button");
+//            //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+//        }catch (Exception e)
+//        {
+//            System.out.println("Human verification Button Appears");
+//        }
+//        return this;
+//    }
     public LoginPage UserEntersEmail() throws Exception{
         try {
             String email = "my.work14625@gmail.com";

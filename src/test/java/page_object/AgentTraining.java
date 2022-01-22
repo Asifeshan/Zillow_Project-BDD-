@@ -8,9 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AgentTraining extends NavigationBar {
-    private static final By AgentFinderTab = By.xpath("//a/span[text()='Agent finder']");
-    private static final By AgentResourceCenterTab = By.xpath("//a/span[text()='Agent resource center']");
-    private static final By ZillowPrimierAgentLogo = By.cssSelector("#header > div.main-nav-container.container > a > svg");
+
     private static final By TrainingTab = By.xpath("//a[text()='Training']");
     private static final By CoursesTab = By.xpath("//a[1][text()='Courses']");
     private static final By TrainingHeader = By.xpath("//h1[text()='Training']");
@@ -19,47 +17,7 @@ public class AgentTraining extends NavigationBar {
     public AgentTraining(WebDriver driver) {
         super(driver);
     }
-    public AgentTraining MouseHoverToAgentFinder() throws Exception{
-        try {
 
-            ActOn.wait(driver, AgentFinderTab).waitForElementToBeVisible();
-            ActOn.element(driver, AgentFinderTab).mouseHover();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            LOGGER.debug("User Mouse Hover To Agent Finder Tab");
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
-
-    public AgentTraining ClicksOnAgentResourceCenter() throws Exception{
-        try {
-            ActOn.wait(driver, AgentResourceCenterTab).waitForElementToBeVisible();
-            ActOn.element(driver, AgentResourceCenterTab).click();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            LOGGER.debug("User Clicks On Agent Resource Center Tab");
-
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-
-    }
-    public AgentTraining NavigatedToAgentResourcesPage() throws Exception{
-        try {
-            ActOn.wait(driver, ZillowPrimierAgentLogo).waitForElementToBeVisible();
-            AssertThat.elementAssertions(driver, ZillowPrimierAgentLogo).elementIsDisplayed();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            LOGGER.debug("User Successfully Navigated To Agent Resource Page");
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-
-    }
     public AgentTraining MouseHoverToTrainingTab() throws Exception{
         try {
             ActOn.wait(driver, TrainingTab).waitForElementToBeVisible();

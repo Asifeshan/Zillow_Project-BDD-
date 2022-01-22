@@ -9,10 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class AffordabilityCalculator extends NavigationBar{
-    private static final By FindAnAgentTitle = By.xpath("//h1[text()='Find an Agent']");
-    private static final By HomeLoansButton = By.xpath("//a/span[text()='Home Loans']");
-    private static final By AffordabilityCalculatorButton = By.linkText("Affordability calculator");
-    private static final By AffordabilityCalculatorHeader = By.xpath("//h1[text()='Affordability Calculator']");
+//    private static final By FindAnAgentTitle = By.xpath("//h1[text()='Find an Agent']");
     private static final By AnnualIncomeBar = By.id("annualIncome");
     private static final By MonthlyDebtBar = By.id("monthlyDebts");
     private static final By DownPaymentBar = By.id("downPayment");
@@ -37,44 +34,7 @@ public class AffordabilityCalculator extends NavigationBar{
 //        }
 //        return this;
 //    }
-    public AffordabilityCalculator MouseHoverToAffordabilityCalculatorButton() throws Exception{
-        try {
-            ActOn.wait(driver, HomeLoansButton).waitForElementToBeVisible();
-            ActOn.element(driver, HomeLoansButton).mouseHover();
-            LOGGER.debug("User Mouse Hover to HomeLoan Button");
-            // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
 
-    public AffordabilityCalculator AffordabilityCalculatorButtonClick() throws Exception{
-        try {
-            ActOn.wait(driver, AffordabilityCalculatorButton).waitForElementToBeVisible();
-            ActOn.element(driver, AffordabilityCalculatorButton).click();
-            LOGGER.debug("User clicks on Affordability Calculator Button");
-
-            //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
-    public AffordabilityCalculator NavigateToAffordabilityCalculatorPage() throws Exception{
-        try {
-            ActOn.wait(driver, AffordabilityCalculatorHeader).waitForElementToBeVisible();
-            AssertThat.elementAssertions(driver, AffordabilityCalculatorHeader).elementIsDisplayed();
-            LOGGER.debug("User Successfully Navigated to Affordability Calculator Page");
-            //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
     public AffordabilityCalculator typeAnnualIncome(String value) throws Exception{
         try {
             ActOn.wait(driver, AnnualIncomeBar).waitForElementToBeVisible();
@@ -155,16 +115,7 @@ public class AffordabilityCalculator extends NavigationBar{
         }
         return this;
     }
-    public AffordabilityCalculator NavigateToFullReportTab() throws Exception{
-        try {
-            ActOn.browser(driver).openBrowser("https://www.zillow.com/mortgage/calculator/affordability/advanced-report/?annualIncome=100000&monthlyDebts=500&customPayment=false&monthlyPayment=1850&monthlyPaymentMax=3700&downPayment=50000&dti=36&rate=3.353&term=360&includeTaxesInsurance=true&propertyTaxRate=1.2&annualHomeownersInsurance=800&includePMI=true&monthlyHOA=0");
-            LOGGER.debug("User Navigated To Full Report Tab");
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
+
     public AffordabilityCalculator validatingAffordableAmount(String expectedValue)throws Exception {
         try {
 //                    String currentWindowHandle = driver.getWindowHandle();
@@ -184,6 +135,7 @@ public class AffordabilityCalculator extends NavigationBar{
         }
         return this;
     }
+
     public AffordabilityCalculator ClicksFullreport() throws Exception{
         try {
             ActOn.wait(driver, FullReport).waitForElementToBeVisible();

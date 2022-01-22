@@ -34,7 +34,7 @@ public class LoginSteps {
     }
     @And("User Clicks on SignIn Link")
     public void userClicksOnSignInLink() throws Exception {
-        new LoginPage(driver).ClickSignIn();
+        new LoginPage(driver).navigateToSignInPage();
         LOGGER.info("User Clicks on SignIn Link");
     }
 

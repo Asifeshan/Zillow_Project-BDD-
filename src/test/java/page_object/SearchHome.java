@@ -11,7 +11,6 @@ import java.time.Duration;
 
 public class SearchHome extends NavigationBar{
 
-    private static final By Buy = By.xpath("//a/span[text()='Buy']");
     private static final By HomeForSellButton = By.xpath("//a/span[text()='Homes for sale']");
     private static final By SearchBar = By.xpath("//div[1]/input[contains(@class, 'react-autosuggest__input')]");
     private static final By SearchButton = By.cssSelector("#srp-search-box > form > div.searchBtnContainer.zillow-searchbox-content-container > button > svg");
@@ -28,20 +27,6 @@ public class SearchHome extends NavigationBar{
         super(driver);
     }
 
-    public SearchHome ClickOnHomeForSaleByMouseHoverToBuy() throws Exception{
-        try {
-
-            ActOn.wait(driver, Buy).waitForElementToBeVisible();
-            ActOn.element(driver, Buy).mouseHover();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-            LOGGER.debug("User Mouse Hover to Buy");
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-
-    }
     public SearchHome ClicksOnHomeForSale() throws Exception{
         try {
             ActOn.wait(driver, HomeForSellButton).waitForElementToBeVisible();

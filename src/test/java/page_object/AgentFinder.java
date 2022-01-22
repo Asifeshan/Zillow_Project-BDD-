@@ -12,12 +12,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AgentFinder extends NavigationBar {
-    private static final By FindAnAgentTitle = By.xpath("//h1[text()='Find an Agent']");
-    private static final By AgentFinderButton = By.xpath("//a/span[text()='Agent finder']");
     private static final By LocationSearchBar = By.xpath("/html/body/div[2]/div/main/div/div/div[1]/div[2]/form/div/div[1]/div[1]/div/input");
     private static final By SearchButton = By.xpath("/html/body/div[2]/div/main/div/div/div[1]/div[2]/form/div/div[1]/div[1]/div/label/button");
-//    private static final By FeaturedAgent = By.xpath("//*[@id='__next']/div/main/div/div/div[1]/div[3]/h2");
     private static final By validateFindAnAgent = By.xpath("//main/div/div/div[1]/h1[text()='Find an Agent']");
+//    private static final By FeaturedAgent = By.xpath("//*[@id='__next']/div/main/div/div/div[1]/div[3]/h2");
+//    private static final By FindAnAgentTitle = By.xpath("//h1[text()='Find an Agent']");
 
 
     private static final Logger LOGGER = LogManager.getLogger(AgentFinder.class);
@@ -37,34 +36,6 @@ public class AgentFinder extends NavigationBar {
 //        return this;
 //    }
 
-    public AgentFinder ClicksOnAgentFinderButton()throws Exception {
-        try {
-
-            ActOn.wait(driver, AgentFinderButton).waitForElementToBeVisible();
-
-            ActOn.element(driver, AgentFinderButton).click();
-            LOGGER.debug("User Clicks On Agent Finder Button");
-            //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
-
-    public AgentFinder NavigatedToAgentFinderPage() throws Exception{
-        try {
-            ActOn.wait(driver, FindAnAgentTitle).waitForElementToBeVisible();
-
-            AssertThat.elementAssertions(driver, FindAnAgentTitle).elementIsDisplayed();
-            LOGGER.debug("User Successfully Navigated To Agent Finder Page");
-            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
 
 
     public AgentFinder EntersLocation(String arg0) throws Exception{

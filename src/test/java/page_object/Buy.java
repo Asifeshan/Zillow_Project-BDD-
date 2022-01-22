@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Buy extends NavigationBar {
-    private static final By RealStateHomeForSellHeader = By.xpath("//h1[text()='Real Estate & Homes For Sale']");
     private static final By SortByButton = By.xpath("//button[text()='Homes for You']");
     private static final By HighToLowButton = By.xpath("//button[text()='Price (High to Low)']");
     private static final By ZillowLogo = By.xpath("//*[@id='page-header-container']/header/nav/div[1]/a/img[1]");
@@ -22,29 +21,7 @@ public class Buy extends NavigationBar {
         super(driver);
     }
 
-//    public Buy waitForPageToLoad() throws Exception{
-//        try {
-//            ActOn.wait(driver, ZillowLogo).waitForElementToBeVisible();
-//        }catch (Exception e)
-//        {
-//            System.out.println("Human verification Button Appears");
-//        }
-//        return this;
-//    }
 
-
-    public Buy NavigatedToBuyPage()throws Exception{
-        try {
-            ActOn.wait(driver, RealStateHomeForSellHeader).waitForElementToBeVisible();
-            AssertThat.elementAssertions(driver, RealStateHomeForSellHeader).elementIsDisplayed();
-            LOGGER.debug("User Successfully Navigated To buy Page");
-            // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        }catch (Exception e)
-        {
-            System.out.println("Human verification Button Appears");
-        }
-        return this;
-    }
     public Buy SortByButton()throws Exception{
         try {
             ActOn.wait(driver, SortByButton).waitForElementToBeVisible();
