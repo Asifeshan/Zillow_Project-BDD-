@@ -47,7 +47,6 @@ public class AffordabilityCalculatorSteps {
     public void UserClicksFullreport() throws Exception {
         new AffordabilityCalculator(driver)
                 .ClicksFullreport()
-                .NavigateToFullReportTab()
                 .SeeMonthlyBudget();
         LOGGER.info("User clicks on Full report to see monthly Budget");
 

@@ -123,7 +123,6 @@ public class AffordabilityCalculator extends NavigationBar{
 //        for (String windowHandle : windowHandles){
 //            if (!currentWindowHandle.equals(windowHandle));
 //        }
-            //     ActOn.browser(driver).openBrowser("https://www.zillow.com/mortgage/calculator/affordability/advanced-report/?annualIncome=100000&monthlyDebts=500&customPayment=false&monthlyPayment=1850&monthlyPaymentMax=3700&downPayment=50000&dti=36&rate=3.353&term=360&includeTaxesInsurance=true&propertyTaxRate=1.2&annualHomeownersInsurance=800&includePMI=true&monthlyHOA=0");
             ActOn.wait(driver, AfforfdAmountLocator).waitForElementToBeVisible();
             String AffordabilityAmount = ActOn.element(driver, AfforfdAmountLocator).getTextValue();
             // now I will do the comparison
