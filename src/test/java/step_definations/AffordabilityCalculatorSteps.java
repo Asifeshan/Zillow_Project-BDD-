@@ -29,6 +29,15 @@ public class AffordabilityCalculatorSteps {
                     .typeAnnualIncome(cells.get("AnnualIncome"))
                     .typeMonthlyDebt(cells.get("MonthlyDebts"))
                     .typeDownPayment(cells.get("DownPayment"))
+                    .AdvanceButtonClick()
+//                    .typeDebtToIncome(cells.get("DebtToIncome"))
+//                    .typeInterestRAte(cells.get("InetrestRate"))
+                    .typeLoanTerm(cells.get("LoanTerms"))
+                    .ClicksOnIncludeTaxButton()
+                    .typePropertyTax(cells.get("PropertyTax"))
+                    .typeHomeInsurance(cells.get("HomeInsurance"))
+                    .ClicksOnIncludePMI()
+                    .typeHOADues(cells.get("HOADues"))
                     .paymentButtonClick();
             LOGGER.info("user has entered credentials from data table and Clicks on payment Button ");
 
@@ -40,7 +49,7 @@ public class AffordabilityCalculatorSteps {
         new AffordabilityCalculator(driver)
                 .validatePaymentAmount(payment)
                 .SeeFullReport();
-        LOGGER.info("User Able to see Full Report");
+        LOGGER.info("User Able to see payment Amount is $2,475 Full Report");
 
     }
     @And("^user Clicks On Full Report$")
@@ -56,7 +65,7 @@ public class AffordabilityCalculatorSteps {
     public void validateAffordAmount(String expectedValue) throws Exception {
         new AffordabilityCalculator(driver)
                 .validatingAffordableAmount(expectedValue);
-        LOGGER.info("User Successfully validate Affordability amount $449,757");
+        LOGGER.info("User Successfully validate Affordability amount $446,961");
     }
 }
 
