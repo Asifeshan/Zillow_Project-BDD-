@@ -26,7 +26,6 @@ public class Buy extends NavigationBar {
         try {
             ActOn.wait(driver, SortByButton).waitForElementToBeVisible();
             ActOn.element(driver, SortByButton).click();
-            // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             LOGGER.debug("User Clicks On SortBy Button");
         }catch (Exception e)
         {
@@ -38,7 +37,6 @@ public class Buy extends NavigationBar {
         try {
             ActOn.wait(driver, HighToLowButton).waitForElementToBeVisible();
             ActOn.element(driver, HighToLowButton).mouseHover();
-            // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             LOGGER.debug("User Mouse Hover To High To Low Button");
         }catch (Exception e)
         {
@@ -50,7 +48,6 @@ public class Buy extends NavigationBar {
         try {
             ActOn.wait(driver, HighToLowButton).waitForElementToBeVisible();
             ActOn.element(driver, HighToLowButton).click();
-            // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             LOGGER.debug("User Clicks On High to low Button");
         }catch (Exception e)
         {
@@ -63,7 +60,6 @@ public class Buy extends NavigationBar {
             ActOn.wait(driver, ZillowLogo).waitForElementToBeVisible();
             AssertThat.elementAssertions(driver, ZillowLogo).elementIsDisplayed();
             LOGGER.debug("User Can see Luxury Homes");
-            //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         }catch (Exception e)
         {
             System.out.println("Human verification Button Appears");
@@ -75,7 +71,6 @@ public class Buy extends NavigationBar {
             ActOn.wait(driver, AreaSearchBar).waitForElementToBeVisible();
             ActOn.element(driver, AreaSearchBar).setValue(Area);
             LOGGER.debug("User Enters Area");
-            //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         }catch (Exception e)
         {
             System.out.println("Human verification Button Appears");
@@ -86,7 +81,6 @@ public class Buy extends NavigationBar {
         try {
             ActOn.wait(driver, AreaSearchButton).waitForElementToBeVisible();
             ActOn.element(driver, AreaSearchButton).click();
-            // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             LOGGER.debug("User Clicks On High to low Button");
         }catch (Exception e)
         {

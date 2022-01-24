@@ -13,8 +13,11 @@ import java.time.Duration;
 
 public class AgentFinder extends NavigationBar {
     private static final By LocationSearchBar = By.xpath("/html/body/div[2]/div/main/div/div/div[1]/div[2]/form/div/div[1]/div[1]/div/input");
-    private static final By SearchButton = By.xpath("/html/body/div[2]/div/main/div/div/div[1]/div[2]/form/div/div[1]/div[1]/div/label/button");
+//    private static final By SearchButton = By.xpath("/html/body/div[2]/div/main/div/div/div[1]/div[2]/form/div/div[1]/div[1]/div/label/button");
+private static final By SearchButton = By.xpath("//div/div[1]/div[2]/div/label/button[contains(@class,'StyledIconButton-c11n-8-50-1')]");
+    ////*[@id="__c11n_k412jxpy"]/button
     private static final By validateFindAnAgent = By.xpath("//main/div/div/div[1]/h1[text()='Find an Agent']");
+     private static final By AgentName = By.xpath("/html/body/div[2]/div/main/div/div/div[1]/div[2]/form/div/div[1]/div[2]/div/input");
 //    private static final By FeaturedAgent = By.xpath("//*[@id='__next']/div/main/div/div/div[1]/div[3]/h2");
 //    private static final By FindAnAgentTitle = By.xpath("//h1[text()='Find an Agent']");
 
@@ -38,11 +41,22 @@ public class AgentFinder extends NavigationBar {
 
 
 
-    public AgentFinder EntersLocation(String arg0) throws Exception{
+    public AgentFinder EntersLocation(String value) throws Exception{
         try {
             ActOn.wait(driver, LocationSearchBar).waitForElementToBeVisible();
-            ActOn.element(driver, LocationSearchBar).setValue(arg0);
+            ActOn.element(driver, LocationSearchBar).setValue(value);
             LOGGER.debug("User Input value in Location Search Bar");
+        }catch (Exception e)
+        {
+            System.out.println("Human verification Button Appears");
+        }
+        return this;
+    }
+    public AgentFinder EntersAgentName(String value2) throws Exception{
+        try {
+            ActOn.wait(driver, AgentName).waitForElementToBeVisible();
+            ActOn.element(driver, AgentName).setValue(value2);
+            LOGGER.debug("User Input value in AgentName Search Bar");
         }catch (Exception e)
         {
             System.out.println("Human verification Button Appears");
@@ -55,9 +69,12 @@ public class AgentFinder extends NavigationBar {
 
             // As Button clicked, but it's not loading the page trial process 1,
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(SearchButton));
-            wait.until(ExpectedConditions.elementToBeClickable(SearchButton)).click();
+//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(SearchButton));
+//            wait.until(ExpectedConditions.elementToBeClickable(SearchButton)).click();
+            ActOn.wait(driver, SearchButton).waitForElementToBeVisible();
+            ActOn.element(driver, SearchButton).click();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             LOGGER.debug("user press search Button upon entering zipcode");;
         }catch (Exception e)
         {

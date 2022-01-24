@@ -18,11 +18,11 @@ public class Hooks {
         LOGGER.info("Launch Browser");
     }
 
-    @After
-
-    public void closeBrowser() {
-        DriverFactory.getInstance().removeDriver();
-     //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        LOGGER.info("Closed the browser");
-    }
+//    @After
+//
+//    public void closeBrowser() {
+//        DriverFactory.getInstance().removeDriver();
+//     //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//        LOGGER.info("Closed the browser");
+//    }
 }

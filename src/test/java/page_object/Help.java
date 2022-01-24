@@ -23,7 +23,6 @@ public class Help extends NavigationBar{
         ActOn.wait(driver, HelpButton).waitForElementToBeVisible();
         ActOn.element(driver, HelpButton).click();
             LOGGER.debug("User Clicks On Help Button");
-      //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             }catch (Exception e)
         {
             System.out.println("Human verification Button Appears");
@@ -35,7 +34,6 @@ public class Help extends NavigationBar{
         try {
         ActOn.wait(driver, ZillowLogoHelp).waitForElementToBeVisible();
         AssertThat.elementAssertions(driver, ZillowLogoHelp).elementIsDisplayed();
-            //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             LOGGER.debug("User Successfully Navigated To Help Page");
         }catch (Exception e)
         {

@@ -22,7 +22,6 @@ public class AgentTraining extends NavigationBar {
         try {
             ActOn.wait(driver, TrainingTab).waitForElementToBeVisible();
             ActOn.element(driver, TrainingTab).mouseHover();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             LOGGER.debug("User Mouse Hover To Training Tab Tab");
         }catch (Exception e)
         {
@@ -34,7 +33,6 @@ public class AgentTraining extends NavigationBar {
         try {
             ActOn.wait(driver, CoursesTab).waitForElementToBeVisible();
             ActOn.element(driver, CoursesTab).click();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             LOGGER.debug("User Clicks On Courses");
         }catch (Exception e)
         {
@@ -46,7 +44,6 @@ public class AgentTraining extends NavigationBar {
         try {
             ActOn.wait(driver, TrainingHeader).waitForElementToBeVisible();
             AssertThat.elementAssertions(driver, TrainingHeader).elementIsDisplayed();
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             LOGGER.debug("User Can see all the offered Trainings");
         }catch (Exception e)
         {
